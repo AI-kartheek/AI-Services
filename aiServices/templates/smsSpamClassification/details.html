@@ -1,0 +1,35 @@
+{% extends "global/layout.html" %} 
+
+{% block content %} 
+<div class="sms-spam details">
+    <div class="box-1 glass-background">
+        <div class="box-1--top">
+            <a href="{{ url_for('main.home') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256S114.6 512 256 512s256-114.6 256-256zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
+                </svg>
+            </a>
+            <h2>SMS Ham-Spam Detection</h2>
+        </div>
+        <div class="box-1--bottom">
+            <div class="btn-container glass-background">
+                <a href="{{ url_for('smsSpamClassification.predict') }}" class="btn">Predict</a>
+                <a href="{{ url_for('smsSpamClassification.predictBatch') }}" class="btn">Predict Batch</a>
+            </div>
+            <ul>
+                <li class="text">click <span>Predict</span> button if you wan't to check for single record.</li>
+                <li class="text">click <span>Predict Batch</span> button if you wan't to check for multiple records at a time (via upload csv file).</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box-2 glass-background">
+        <div class="box-2--top">
+            <h2>Necessity?</h2>
+        </div>
+        <div class="box-2--bottom">
+            <p class="text">Now a days everyone has a cell phone in their pocket with basic features such as messaging and calling. Spam communications are those that are delivered to lot of people without their permission and usually promote products, facilities, or business possibilities. The proportion of fraudulent communications among spam has drastically grown in recent times. Fraud messages sometimes use a tempting or misleading offers to fool recipients into providing money or sensitive information.</p>
+            <p class="text">One approach towards creating a system for scam sms recognition and early scam detection is identifying spam messages. AI enabled Natural Language Processing tools have seized control of the issue and found a solution by enabling us to distinguish between ham and spam text based on past data. Thanks to the technology make it to happen.</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+
+// ============== HOME ==============
+.home {
+    .services {
+        display: flex;
+        justify-content: center;
+        gap: 3%;
+        .service {
+            width: 300px;
+            height: 400px;
+            // border: 1px solid color(light);
+            background-color: color('light-gray');
+            border-radius: 10px;
+            img {
+                width: 100%;
+                height: 70%;
+                border-radius: 10px 10px 0px 0px;
+            }
+            .mid-btn {
+                position: relative;
+                a {
+                    position: absolute;
+                    top: 0px;
+                    left: 50%;
+                    transform: translate(-50%, -24px); // padding top + font-size/2   
+                }
+            }
+            .service--body {
+                padding: 20px 8px 8px 8px;
+                h5 {
+                    font-size: 20px;
+                    font-weight: 500;
+                    word-break: break-all;
+                }
+                p {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}

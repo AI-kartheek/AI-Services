@@ -1,0 +1,31 @@
+{% extends "global/layout.html" %} 
+
+{% block content %} 
+<div class="home">
+    <!-- text on image here -->
+    <div class="services">
+        <div class="service">
+            <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="">
+            <div class="mid-btn">
+                <a href="{{ url_for('fakeNewsClassification.details') }}" class="btn btn-circle">Read More</a>
+            </div>
+            <div class="service--body">
+                <h5>Real-Fake News Classification System</h5>
+                <p>Accuracy = 99.99%</p>
+                <!-- content about their respective metrics such as accuracy, precision, recall, F1-Score etc  -->
+            </div>
+        </div>
+        <div class="service">
+            <img src="{{ url_for('static', filename='images/img2.jpg') }}" alt="">
+            <div class="mid-btn">
+                <a href="{{ url_for('smsSpamClassification.details') }}" class="btn btn-circle">Read More</a>
+            </div>
+            <div class="service--body">
+                <h5>SMS Ham-Spam Classification System</h5>
+                <p>Accuracy = 98%</p>
+                <!-- content about their respective metrics such as accuracy, precision, recall, F1-Score etc  -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

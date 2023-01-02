@@ -1,0 +1,66 @@
+{% extends "global/layout.html" %} 
+
+{% block predict %} 
+    {% if showPredict %} 
+        <a href="{{ url_for('smsSpamClassification.predict') }}" class="btn btn-invisible">Predict</a>
+    {% else %} 
+        <a href="{{ url_for('smsSpamClassification.predictBatch') }}" class="btn btn-invisible">Predict Batch</a>
+    {% endif %}
+{% endblock predict %}
+
+{% block content %} 
+<div class="sms-spam predict-batch">
+    {% if not show_output %}
+        <div class="box-1 glass-background">
+            <div class="box-1--top">
+                <a href="{{ url_for('smsSpamClassification.details') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256S114.6 512 256 512s256-114.6 256-256zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
+                    </svg>
+                </a>
+                <h2>SMS Ham-Spam Pediction on Batch Mode</h2>
+            </div>
+            <div class="box-1--bottom">
+                <!-- add  class="needs-validation" novalidate in the below form  -->
+                <form action="" method="post" enctype="multipart/form-data"> 
+                    {{ form.hidden_tag() }}
+                    <label for="file_data">Upload CSV File</label>
+                    {{ form.file_data }}
+                    <div class="btn-box">
+                        <input name="submit" type="submit" value="Predict Batch" class="btn btn-outline">
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        <div class="box-1 glass-background results">
+            <div class="box-1--top">
+                <a href="{{ url_for('smsSpamClassification.predictBatch') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256S114.6 512 256 512s256-114.6 256-256zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
+                    </svg>
+                </a>
+                <h2>Results</h2>
+            </div>
+            <div class="box-1--bottom">
+                <p>download the csv file predicted on ham vs spam sms.</p>
+                <div class="btn-box">
+                    <a href="{{ url_for('main.download_file', file_name=output_file_name) }}" class="btn">Download</a>
+                </div>
+                <table>
+                    <tr>
+                        <th>Total Records</th>
+                        <th>Spam Records</th>
+                        <th>Ham Records</th>
+                    </tr>
+                    <tr>
+                        <td>{{ spam_count + ham_count }}</td>
+                        <td>{{ spam_count }}</td>
+                        <td>{{ ham_count }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

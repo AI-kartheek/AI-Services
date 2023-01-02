@@ -1,0 +1,328 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: color('light-3');
+}
+
+.text {
+    color: color('light-4');
+}
+
+body {
+    background-color: color('bg-l');
+}
+
+.container {
+    margin: 0px 60px;
+    padding: 100px 0px 8px 0px;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: color('bg');
+    padding: 15px 60px;
+    h1 {
+        color: color('light');
+        a {
+            // color: color('light');
+            text-transform: uppercase;
+            span {
+                display: inline-block;
+                padding: 8px 10px;
+                border-radius: 50%;
+                background-color: color('light');
+                color: color('black');
+            }
+        }
+    }
+    .btn {
+        padding: 8px 12px;
+        border-radius: 4px;
+    }
+}
+
+.btn {
+    background-color: color('link');
+    color: color('light');
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    &-circle {
+        padding: 8px 16px;
+        border-radius: 24px; // padding left + font-size/2
+    }
+    &-outline {
+        background-color: transparent;
+        border: 1px solid color('link');
+        color: color('link');
+        &:hover {
+            background-color: color('link');
+            color: color('light');
+        }
+    }
+    &-invisible {
+        background-color: transparent;
+        color: color('link');
+        &:hover {
+            background-color: color('light');
+            color: color('black');
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: color(link);
+}
+
+.glass-background {
+    background-color: color('gray');
+    border-radius: 10px;
+    // padding: 20px;
+}
+
+svg {
+    width: 1.7rem;
+    height: 1.7rem;
+    fill: color('light-3');
+}
+
+// ============== DETAILS ==============
+.details {
+    display: flex;
+    gap: 3%;
+    .box-1 {
+        flex-basis: 35%;
+        .box-1--top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: color('bg');
+            padding: 16px 18px;
+            border-radius: 10px 10px 0px 0px;
+        }
+        .box-1--bottom {
+            padding: 18px;
+            .btn-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10%;
+                padding: 18px 24px;
+                margin: 40px 0px 10px 0px;
+                background-color: color('light-gray');
+            }
+            ul {
+                list-style-position: inside;
+                li {
+                    line-height: 30px;
+                    text-align: justify;
+                    margin-top: 24px;
+                    span {
+                        // font-weight: 500;
+                        display: inline-block;
+                        padding: 4px 8px;
+                        border: 1px solid color('light-s');
+                        border-radius: 3px;
+                        background-color: color('light-gray');
+                        line-height: 16px;
+                    }
+                }
+            } 
+        }
+        
+    }
+    .box-2 {
+        flex-basis: 65%;
+        .box-2--top {
+            background-color: color('bg');
+            padding: 16px 18px;
+            border-radius: 10px 10px 0px 0px;
+            h2 {
+                text-align: center;
+            }
+        }
+        .box-2--bottom {
+            padding: 18px;
+            margin-top: 24px;
+            p {
+                margin-top: 25px;
+                line-height: 30px;
+                text-indent: 3rem;
+                text-align: justify;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+// ============== PREDICT ==============
+.predict {
+    display: flex;
+    gap: 3%;
+    .box-1 {
+        flex-basis: 65%;
+        .box-1--top {
+            display: flex;
+            align-items: center;
+            gap: 15%;
+            background-color: color('bg');
+            padding: 16px 18px;
+            border-radius: 10px 10px 0px 0px;
+        }
+        .box-1--bottom {
+            margin-top: 40px;
+            padding: 18px;
+            form {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .text-box {
+                    width: 80%;
+                    label {
+                        display: block;
+                        margin-bottom: 16px;
+                    }
+                    textarea {
+                        width: 100%;
+                        height: calc(100vh - 300px);
+                        resize: vertical;
+                        background-color: color('bg-l');
+                        outline: none;
+                        border: 1px solid color('light-s');
+                        border-radius: 5px;
+                        padding: 0.8rem;
+                        line-height: 1.3rem;
+                        &:focus {
+                            box-shadow: 0px 0px 3px 5px color('light-s');
+                            border: 1px solid color('light');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .box-2 {
+        flex-basis: 35%;
+        .box-2--top {
+            background-color: color('bg');
+            border-radius: 10px 10px 0px 0px;
+            padding: 16px 18px;
+            h2 {
+                text-align: center;
+            }
+        }
+        .box-2--bottom {
+            padding: 18px;
+            p {
+                margin-top: 36px;
+                font-size: 64px;
+                font-weight: 800;
+                color: color('green-d');
+                text-align: center;
+                span {
+                    display: block;
+                    font-size: 56px;
+                    font-weight: 700;
+                    line-height: 60px;
+                    color: color('green-l');
+                }
+                &.other {
+                    color: color('red-d');
+                    span {
+                        color: color('red-l');
+                    }
+                }
+                &.default {
+                    color: color('light');
+                    opacity: 60%;
+                    margin-top: 64px;
+                }
+                
+            }
+        }
+    }
+}
+
+// ============== PREDICT BATCH ==============
+.predict-batch {
+    position: relative;
+    .box-1 {
+        width: 700px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        .box-1--top {
+            display: flex;
+            align-items: center;
+            padding: 16px 18px;
+            border-radius: 10px 10px 0px 0px;
+            background-color: color('bg');
+            h2 {
+                margin-left: 32px;
+            }
+        }
+        .box-1--bottom {
+            padding: 48px 18px 18px 18px;
+            form {
+                label {
+                    display: block;
+                    margin-bottom: 16px;
+                }
+                .btn-box {
+                    margin-top: 48px;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                    }
+                }
+                
+            }
+        }
+        &.results {
+            .box-1--bottom {
+            //     p {
+            //         line-height: 24px;
+            //     }
+                .btn-box {
+                    margin: 32px 0px 64px 0px;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                    }
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    tr {
+                        text-align: center;
+                        th {
+                            padding: 8px 12px;
+                            border: 1px solid color('light-2');
+                            background-color: color('bg');
+                        }
+                        td {
+                            padding: 6px 8px;
+                            opacity: 80%;
+                            border: 1px solid color('light-2');
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

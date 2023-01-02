@@ -1,0 +1,51 @@
+{% extends "global/layout.html" %} 
+
+{% block predict %} 
+    {% if showPredict %} 
+        <a href="{{ url_for('fakeNewsClassification.predict') }}" class="btn btn-invisible">Predict</a>
+    {% else %} 
+        <a href="{{ url_for('fakeNewsClassification.predictBatch') }}" class="btn btn-invisible">Predict Batch</a>
+    {% endif %}
+{% endblock predict %}
+
+{% block content %} 
+<div class="fake-news predict">
+    <div class="box-1 glass-background">
+        <div class="box-1--top">
+            <a href="{{ url_for('fakeNewsClassification.details') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256S114.6 512 256 512s256-114.6 256-256zM215 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L392 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-214.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L103 273c-9.4-9.4-9.4-24.6 0-33.9L215 127z"/>
+                </svg>
+            </a>
+            <h2>Fake-Real News Pediction</h2>
+        </div>
+        <div class="box-1--bottom">
+            <!-- add needs-validation, novalidate inside below form  -->
+            <form action="" method="post"> 
+                {{ form.hidden_tag() }}
+                <div class="text-box">
+                    <label for="content">News Content</label>
+                    {{ form.content }}
+                    <!-- above line is same as below line -->
+                    <!-- <textarea id="content" name="content" required></textarea> -->
+                </div>
+                <input name="submit" type="submit" value="Predict" class="btn btn-outline">
+            </form>
+        </div>
+    </div>
+    <div class="box-2 glass-background">
+        <div class="box-2--top">
+            <h2>Results</h2>
+        </div>
+        <div class="box-2--bottom">
+            {% if show_output %}
+                <p><span>{{ real_score }}%</span>REAL</p>
+                <p class="other"><span>{{ fake_score }}%</span>FAKE</p>
+            {% else %} 
+                <p class="default">output<br> will display here</p>
+            {% endif %}
+        </div>
+    </div>
+    
+</div>
+{% endblock content %}
