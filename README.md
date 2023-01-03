@@ -16,11 +16,11 @@ A responsive Flask application is designed by keeping an eye in the Artificial I
 * upload a csv file for prediction.
 ![predict-batch Page](https://github.com/AI-kartheek/AI-Services/blob/main/pics/predict-batch.png)
 
-**Predict-batch result**
+**Predict-batch Result**
 * download a resultant csv file.
 ![batch result](https://github.com/AI-kartheek/AI-Services/blob/main/pics/predict-batch-result.png)
 
-### services supported
+### Services Supported
 1. **Real/Fake News Classification** [[view source code](https://github.com/AI-kartheek/AI-Fake-News-Detection-System)]
 2. **SMS Ham/Spam Classification** [[view source code](https://github.com/AI-kartheek/SMS-Spam-Detection-using-Glove-Vectors)]
 
